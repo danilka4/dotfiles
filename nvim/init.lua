@@ -1,0 +1,10 @@
+require "options"
+require "plugins"
+require "keymap"
+require "colors"
+require "lsp.lsp"
+require "lsp.autopairs"
+require "harpoon"
+require "telescope_conf"
+require "keybinds"
+vim.cmd('source ~/.config/nvim/lua/vim_stuff.vim')
