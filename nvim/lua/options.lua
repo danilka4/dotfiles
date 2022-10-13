@@ -15,7 +15,7 @@ local options = {
     syntax = "on",
     termguicolors = true,
     showcmd = true,
-    spell = true,
+    --spell = true,
 }
 
 for k, v in pairs(options) do
