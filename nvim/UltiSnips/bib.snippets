@@ -17,9 +17,14 @@ snippet article "Article reference" b
 	title		= "${3:title}",
 	subtitle	= "${4:subtitle}",
 	journaltitle= "${5:journal}",
-	volume		= "${6:NN}",
-	number		= "${7:NN}",
-	year		= "${8:YYYY}"
+	journalsubtitle= "${6:journalsub}",
+	editor		= "${7:edit}",
+	location    = "${8:location}",
+	publisher   = "${9:publisher}",
+	volume		= "${10:NN}",
+	number		= "${11:NN}",
+	year		= "${12:YYYY}",
+	pages		= "${13:NN--NN}"
 }
 endsnippet
 
@@ -31,7 +36,8 @@ snippet book "Book reference" b
 	subtitle	= "${4:subtitle}",
 	year		= "${5:YYYY}",
 	location	= "${6:somewhere}",
-	publisher	= "${7:publisher}"
+	publisher	= "${7:publisher}",
+	pages		= "${10:NN--NN}",
 }
 endsnippet
 
@@ -45,7 +51,7 @@ snippet inb "In Book reference" b
 	editor		= "${6:editor}",
 	year		= "${7:YYYY}",
 	location	= "${8:somewhere}",
-	publisher	= "${9:publisher}"
+	publisher	= "${9:publisher}",
 }
 endsnippet
 

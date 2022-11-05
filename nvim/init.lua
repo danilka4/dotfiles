@@ -7,4 +7,5 @@ require "lsp.autopairs"
 require "harpoon"
 require "telescope_conf"
 require "keybinds"
+require "lua_line"
 vim.cmd('source ~/.config/nvim/lua/vim_stuff.vim')

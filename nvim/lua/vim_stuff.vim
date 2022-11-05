@@ -99,11 +99,12 @@ function SetTexOptions()
         "nnoremap <Leader>p :w<CR>:silent !latexmk -pdf -xelatex %<CR>
         "au VimEnter * silent !zathura $(echo % | sed 's/tex$/pdf/') & disown
         "nnoremap <Leader>p :w<CR>:silent !latexmk -quiet -pv "%"<CR>:redraw!<CR>
-        "nnoremap <Leader>o :w<CR>:!latexmk -pdf -pv "%"<CR>
+        nnoremap <Leader>o :!latexmk -pdf -pv "%"<CR>
         nnoremap <Leader>x :w<CR>:!latexmk -xelatex "%"<CR>
         au BufWritePost * call jobstart('latexmk -shell-escape -pdf '.expand('%'))
         nnoremap <Leader>v :!zathura $(echo % \| sed 's/tex$/pdf/') --config-dir=~/.config/zathura/texrc --fork<CR><CR>
         nnoremap <Leader>b :split ~/Documents/latex/sources.bib<cr>
+        inoremap ]] =<Esc>r'a
         au VimLeave * !latexmk -c %
         au VimLeave * !rm *.bbl
         au VimLeave * !rm *.xdv
@@ -147,6 +148,7 @@ autocmd FileType markdown,text lua require("cmp").setup.buffer { enabled = false
 autocmd FileType markdown call SetMdOptions()
 function SetMdOptions()
     nnoremap <Leader>b :split ~/Documents/latex/sources.bib<cr>
+    set spell
     "nnoremap <leader>v 
 endfunction
 

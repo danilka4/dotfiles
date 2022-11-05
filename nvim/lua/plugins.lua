@@ -40,6 +40,10 @@ Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 -- Harpoon
 Plug 'ThePrimeagen/harpoon'
 
+Plug 'nvim-lualine/lualine.nvim'
+-- If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
+
 -- Snips
 --Plug 'honza/vim-snippets'
 

@@ -13,7 +13,7 @@ inoremap <buffer><silent> ;s <SPACE>%>%
 inoremap <buffer><silent> ;a <SPACE><-<SPACE>
 inoremap <c-l> <c-o>:call HighlightLine()<CR><Plug>SendDownV
 nmap K :call chansend(4, "?")<CR>viw<Plug>SendDownV:wincmd j<CR>i
-tnoremap q q<BS><C-\><C-n><C-w>k
+"tnoremap q q<BS><C-\><C-n><C-w>k
 " edits rprofile
 nnoremap <leader>er :vsplit /etc/R/Renviron<CR>
 nnoremap <Leader>es :vsplit ~/.config/nvim/r.vim<CR>
