@@ -85,9 +85,9 @@ tnoremap <c-j> <C-\><C-n><C-w>j
 tnoremap <c-l> <C-\><C-n><C-w>l
 
 
-autocmd FileType r source ~/.config/nvim/lua/r.vim
-autocmd FileType rmd source ~/.config/nvim/lua/rmd.vim
-autocmd FileType rmd source ~/.config/nvim/lua/r.vim
+"autocmd FileType r source ~/.config/nvim/lua/r.vim
+"autocmd FileType rmd source ~/.config/nvim/lua/rmd.vim
+"autocmd FileType rmd source ~/.config/nvim/lua/r.vim
 
 
 "

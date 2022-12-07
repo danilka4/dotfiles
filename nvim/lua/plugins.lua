@@ -11,6 +11,10 @@ Plug 'sainnhe/everforest'
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+Plug 'nvim-treesitter/playground'
+
+--Plug 'danilka4/ts_r'
+Plug '~/Documents/nvim/ts_r/'
 
 Plug 'unblevable/quick-scope' -- Makes f/t better
 

@@ -3,7 +3,7 @@ map <Leader>r :new term://zsh<CR>iR<CR><C-\><C-n>G<C-w>k
 map <Leader>q :wincmd j<CR>:q<CR>
 autocmd VimEnter * split
 autocmd VimEnter * term
-autocmd VimEnter * norm G
+"autocmd VimEnter * norm G
 autocmd VimEnter * 0resize +5
 autocmd VimEnter * wincmd k
 au VimEnter * call chansend(4, "R\n")

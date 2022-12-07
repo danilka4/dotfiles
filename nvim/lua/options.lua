@@ -16,6 +16,7 @@ local options = {
     termguicolors = true,
     showcmd = true,
     --spell = true,
+    undofile = true,
 }
 
 for k, v in pairs(options) do

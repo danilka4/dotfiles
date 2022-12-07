@@ -70,6 +70,7 @@ require'lspconfig'.clangd.setup{}
 require'lspconfig'.texlab.setup{cmd = {"texlab"}, filetypes = {"tex", "bib"}}
 require'lspconfig'.r_language_server.setup{}
 require'lspconfig'.pyright.setup{}
+--require'lspconfig'.java_language_server.setup{cmd = {cmd = '~/Downloads/java-language-server/scripts/link_linux.sh'}}
 
 require'lspconfig'.sumneko_lua.setup {
   settings = {
@@ -94,7 +95,7 @@ require'lspconfig'.sumneko_lua.setup {
 }
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "r", "latex", "lua", "vim", "c", "python"},
+  ensure_installed =  "all",
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -107,7 +108,7 @@ require'nvim-treesitter.configs'.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be disabled
-    --disable = { "c", "rust" },
+    disable = { "markdown" },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -115,5 +116,37 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  indent = {
+      enable = true
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
 
+}
+require "nvim-treesitter.configs".setup {
+  playground = {
+    enable = true,
+    disable = {},
+    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
+    keybindings = {
+      toggle_query_editor = 'o',
+      toggle_hl_groups = 'i',
+      toggle_injected_languages = 't',
+      toggle_anonymous_nodes = 'a',
+      toggle_language_display = 'I',
+      focus_language = 'f',
+      unfocus_language = 'F',
+      update = 'R',
+      goto_node = '<cr>',
+      show_help = '?',
+    },
+  }
 }
