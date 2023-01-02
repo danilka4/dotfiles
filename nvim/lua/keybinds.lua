@@ -3,11 +3,30 @@ local silent = { silent = true }
 
 local vim = vim
 
--- sets leader to comma
+-- sets leader to space
 vim.g.mapleader = " "
+
+-- Saves in insert mode
+vim.keymap.set('i', '<c-s>', '<esc>:w<cr>a')
+
+-- Opens vimrc
+vim.keymap.set('n', '<leader>ev', ':vsplit $MYVIMRC<cr>')
+
+-- <c-vim arrows> switches screen
+vim.keymap.set('n', '<c-j>', '<c-w>j')
+vim.keymap.set('n', '<c-k>', '<c-w>k')
+vim.keymap.set('n', '<c-h>', '<c-w>h')
+vim.keymap.set('n', '<c-l>', '<c-w>l')
+
+-- <c-vim arrows> switches screen in terminal mode
+vim.keymap.set('t', '<c-j>', '<c-\\><c-n><c-w>j')
+vim.keymap.set('t', '<c-k>', '<c-\\><c-n><c-w>k')
+vim.keymap.set('t', '<c-h>', '<c-\\><c-n><c-w>h')
+vim.keymap.set('t', '<c-l>', '<c-\\><c-n><c-w>l')
 
 vim.keymap.set('n', '<Leader>ff', '<Cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<Leader>fF', '<Cmd>lua require("telescope.builtin").find_files({cwd="/home/lizzy"})<cr>')
+vim.keymap.set('n', '<Leader>fg', '<Cmd>Telescope git_files<cr>')
 
 nnoremap("<leader>`", function() require("harpoon.mark").add_file() end, silent)
 nnoremap("<leader>q", function() require("harpoon.ui").toggle_quick_menu() end, silent)
@@ -28,3 +47,14 @@ vim.api.nvim_create_autocmd({'VimEnter'}, {
     pattern = {"*.r", "*.rmd"},
     callback = function() ts_r.open_term() end,
 })
+
+require'toggleterm'.setup{}
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({cmd = "lazygit", hidden = true, direction = "float"})
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>")

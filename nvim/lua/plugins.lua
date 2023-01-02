@@ -5,6 +5,7 @@ vim.call('plug#begin', '~/.local/share/nvim/plugins/plugged')
 Plug 'windwp/nvim-autopairs'
 Plug 'karoliskoncevicius/vim-sendtowindow' -- Sends input to another window
 Plug 'tpope/vim-fugitive' -- OP git stuff
+Plug 'akinsho/toggleterm.nvim'
 
 -- Color
 Plug 'sainnhe/everforest'
@@ -54,3 +55,4 @@ Plug 'kyazdani42/nvim-web-devicons'
 -- Tests startup time
 Plug 'dstein64/vim-startuptime'
 vim.call('plug#end')
+

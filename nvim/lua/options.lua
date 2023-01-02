@@ -15,8 +15,10 @@ local options = {
     syntax = "on",
     termguicolors = true,
     showcmd = true,
-    --spell = true,
     undofile = true,
+    incsearch = true,           -- Highlight all as you type
+    ignorecase = true,          -- Ignore case
+    smartcase = true,           -- Don't ignore uppercase
 }
 
 for k, v in pairs(options) do

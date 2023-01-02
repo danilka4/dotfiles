@@ -23,7 +23,7 @@ cmp.setup({
         { name = 'buffer' },
     },
         {{name = "dictionary",
-            keyword_length = 2,},}
+            keyword_length = 0,},}
             )
 })
 
