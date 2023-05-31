@@ -44,6 +44,8 @@
         "/home/lizzy/.local/share/nvim/plugins/plugged/ultisnips/after",
         "/home/lizzy/.local/share/nvim/plugins/plugged/cmp-nvim-ultisnips/after",
         "/usr/share/vim/vimfiles",
-        "${3rd}/luassert/library"
-    ]
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
+    ],
+    "workspace.checkThirdParty": false
 }

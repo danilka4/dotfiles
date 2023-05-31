@@ -9,6 +9,9 @@ vim.g.mapleader = " "
 -- Saves in insert mode
 vim.keymap.set('i', '<c-s>', '<esc>:w<cr>a')
 
+-- Records tea in insert mode
+vim.keymap.set('i', '<c-t>', '<esc>:!tea<cr>a')
+
 -- Opens vimrc
 vim.keymap.set('n', '<leader>ev', ':vsplit $MYVIMRC<cr>')
 
@@ -27,6 +30,7 @@ vim.keymap.set('t', '<c-l>', '<c-\\><c-n><c-w>l')
 vim.keymap.set('n', '<Leader>ff', '<Cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<Leader>fF', '<Cmd>lua require("telescope.builtin").find_files({cwd="/home/lizzy"})<cr>')
 vim.keymap.set('n', '<Leader>fg', '<Cmd>Telescope git_files<cr>')
+vim.keymap.set('n', '<Leader>fb', '<Cmd>lua require("telescope.builtin").live_grep({cwd="/home/lizzy/Documents/latex/", glob_pattern="sources.bib", disable_coordinates=true, use_regex=true, default_text="@.*\\\\{",path_display = function() return "" end})<cr>')
 
 nnoremap("<leader>`", function() require("harpoon.mark").add_file() end, silent)
 nnoremap("<leader>q", function() require("harpoon.ui").toggle_quick_menu() end, silent)
@@ -58,3 +62,4 @@ function _lazygit_toggle()
 end
 
 vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>")
+vim.keymap.set("i", "]]", "a<Esc>r'a")

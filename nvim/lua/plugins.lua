@@ -54,5 +54,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 -- Tests startup time
 Plug 'dstein64/vim-startuptime'
-vim.call('plug#end')
 
+-- Vim Wiki
+Plug 'vimwiki/vimwiki'
+vim.call('plug#end')

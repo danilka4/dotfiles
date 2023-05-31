@@ -8,4 +8,5 @@ require "harpoon"
 require "telescope_conf"
 require "keybinds"
 require "lua_line"
+require "vimwiki"
 vim.cmd('source ~/.config/nvim/lua/vim_stuff.vim')

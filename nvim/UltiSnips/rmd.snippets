@@ -1,5 +1,16 @@
-snippet ch "Chunk" b
-\`\`\`{r}
-$0
+snippet chunk "Chunk" b
+\`\`\`\{r\}
+${0}
 \`\`\`
+endsnippet
+
+snippet header "Header" b
+---
+title: "$1"
+author: "Daniel Palamarchuk"
+date: "$2"
+output: ${3:pdf_document}
+---
+
+$0
 endsnippet

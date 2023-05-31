@@ -15,4 +15,4 @@ vim.api.nvim_create_autocmd({'VimEnter'}, {
 })
 
 vim.keymap.set('i', ';a', ' <- ')
-vim.keymap.set('i', ';s', ' %>% ')
+vim.keymap.set('i', ';s', ' %>%')

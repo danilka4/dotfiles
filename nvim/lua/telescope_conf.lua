@@ -32,7 +32,27 @@ require('telescope').setup{
           end
         }
       }
-    },    -- Default configuration for builtin pickers goes here:
+    },
+    --live_grep = {
+    --  -- your defaults for live_grep
+    --    additional_args = function(opts)
+    --        if opts.search_all == true then
+    --            return {}
+    --        end
+
+    --        local args_for_ext = {
+    --            ["cs"]  = "-tcs",
+    --            ["cpp"] = "-tcpp",
+    --            ["c"]   = "-tcpp",
+    --            ["h"]   = "-tcpp",
+    --            ["rs"]  = "-trust",
+    --            ["lua"] = "-tlua",
+    --            ["bib"] = "-tbib"
+    --        }
+    --        return { args_for_ext[vim.bo.filetype] }
+    --    end
+    --}
+        -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
     --   ...

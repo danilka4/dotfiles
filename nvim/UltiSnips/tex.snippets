@@ -36,12 +36,62 @@ ${0:body}
 \\end{document}
 endsnippet
 
+snippet reaction "5554 reaction" b
+\\documentclass[12pt, letterpaper, twoside]{article}
+\\usepackage[letterpaper,top=1in,bottom=1in,left=1in,right=1in,marginparwidth=5cm]{geometry}
+
+\\usepackage[utf8]{inputenc}
+\\usepackage{times}
+
+% Bibliography stuff
+\\usepackage[american]{babel}
+\\usepackage[autostyle]{csquotes}
+\\usepackage{hyperref}
+
+\\usepackage[
+	style=authoryear-ibid,
+	backend=biber,
+	hyperref=true
+]{biblatex}
+\\bibliography{$HOME/Documents/latex/sources}
+
+\\makeatletter         
+\\renewcommand\maketitle{
+{
+\\raggedright
+{Daniel Palamarchuk}\\\\
+{Week $1 Reaction}\\\\
+{$2/$3/$4}}}
+\\makeatother
+
+\\begin{document}
+\\maketitle
+
+${0:body}
+
+\\begin{enumerate}
+	\\item 
+	\\item 
+	\\item 
+\\end{enumerate}
+
+\\printbibliography
+
+\\end{document}
+endsnippet
+
 snippet cp "cite in parenthesis" A
 \\parencite[$1]{$2} $0
 endsnippet
 
 snippet ct "cite in text"
 \\textcite[$1]{$2} $0
+endsnippet
+
+snippet cf "cite in full"
+\\fullcite{$1}
+
+$0
 endsnippet
 
 snippet fr "fraction"
@@ -289,4 +339,83 @@ snippet ceneq "centered multi-line equation"
     $0
 \\end{gathered}
 \\end{equation*}
+endsnippet
+
+snippet slide "Slide Show" b
+\\documentclass[12pt, letterpaper, twoside]{beamer}
+
+\\usepackage[utf8]{inputenc}
+\\usepackage{times}
+
+% Bibliography stuff
+\\usepackage[american]{babel}
+\\usepackage[autostyle]{csquotes}
+\\usepackage{hyperref}
+
+\\usepackage[
+	style=authoryear-ibid,
+	backend=biber,
+	hyperref=true
+]{biblatex}
+\\bibliography{$HOME/Documents/latex/sources}
+
+\\title{$1}
+\\author{Daniel Palamarchuk}
+\\date{$2}
+
+\\begin{document}
+\\maketitle
+\\newpage
+
+\\begin{frame}
+$0
+\\end{frame}
+
+\\newpage
+\\printbibliography
+
+\\end{document}
+
+endsnippet
+
+snippet art_py "Python Classwork" b
+\\documentclass[12pt]{scrartcl}
+\\usepackage[utf8]{inputenc}
+\\usepackage{minted}   % For syntax-highlighted code snippets
+\\usepackage{amsmath}  % For math and in-equation comments
+\\usepackage{hyperref}
+
+\\newcommand{\hint}[1]{%
+    \\fbox{ \\parbox{\\dimexpr\\linewidth-2\\fboxsep-2\\fboxrule}{
+        Hint: #1
+    }
+}
+}
+
+\\newenvironment{amatrix}[1]{%
+  \\left[\\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \\end{array}\\right]
+}
+
+\\begin{document}
+
+\\begin{center}
+	\\hrule
+	\\vspace{.4cm}
+	{\\textbf { \\large RSM Summer Python}}
+\\end{center}
+{\\textbf{Name:}\\ \\hspace{\\fill} \\textbf{Date:} \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\  \\\\
+{ \\textbf{Meet:}} ${1} \\hspace{\\fill} \\textbf{Assignment:} ${2: Assignment title} \\\\
+	\\hrule
+
+\\ 
+
+$0
+
+\\end{document}
+endsnippet
+
+snippet verb "verb" 
+\\verb|$1| $0
 endsnippet

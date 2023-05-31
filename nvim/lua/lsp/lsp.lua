@@ -23,7 +23,7 @@ cmp.setup({
         { name = 'buffer' },
     },
         {{name = "dictionary",
-            keyword_length = 0,},}
+            keyword_length = 2,},}
             )
 })
 
@@ -42,7 +42,20 @@ cmp.setup.cmdline(':', {
 })
 
 require("cmp_dictionary").setup({
-    dic = {["tex"] = "/home/lizzy/Documents/latex/authors.dic"},
+  -- The following are default values.
+  exact = 2,
+  first_case_insensitive = false,
+  document = false,
+  document_command = "wn %s -over",
+  async = false,
+  sqlite = false,
+  max_items = -1,
+  capacity = 5,
+  debug = false,
+})
+
+require("cmp_dictionary").switcher({
+    filetype = {tex = "/home/lizzy/Documents/latex/authors.dict"},
 })
 
 local lspkind = require('lspkind')
@@ -72,7 +85,7 @@ require'lspconfig'.r_language_server.setup{}
 require'lspconfig'.pyright.setup{}
 --require'lspconfig'.java_language_server.setup{cmd = {cmd = '~/Downloads/java-language-server/scripts/link_linux.sh'}}
 
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {
       runtime = {
@@ -128,9 +141,6 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = "grm",
     },
   },
-
-}
-require "nvim-treesitter.configs".setup {
   playground = {
     enable = true,
     disable = {},
