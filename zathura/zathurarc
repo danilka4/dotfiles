@@ -1,0 +1,5 @@
+map <Return> feedkeys "<S-J>"
+map \'\' feedkeys "<C-o>"
+set synctex true
+set synctex-editor-command "code -g %{input}:%{line}"
+set selection-clipboard clipboard
